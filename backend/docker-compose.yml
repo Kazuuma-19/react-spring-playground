@@ -8,6 +8,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    networks:
+      - react-spring-playground-network
 
   db:
     image: postgres:17
@@ -19,7 +21,12 @@ services:
     ports:
       - "5434:5432" # localのpostgresとの競合を防ぐため
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - react-spring-playground-data:/var/lib/postgresql/data
+    networks:
+      - react-spring-playground-network
 
 volumes:
-  db-data:
+  react-spring-playground-data:
+
+networks:
+  react-spring-playground-network:
