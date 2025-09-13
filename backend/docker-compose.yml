@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: .
+    image: react-spring-playground-backend:latest
+    container_name: react-spring-playground-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17
+    container_name: react-spring-playground-db
+    environment:
+      POSTGRES_DB: react_spring_playground
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432" # localのpostgresとの競合を防ぐため
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
