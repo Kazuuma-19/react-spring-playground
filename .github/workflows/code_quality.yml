@@ -1,6 +1,7 @@
 name: Qodana
 on:
-  pull_request: [opened, synchronize]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   qodana:
