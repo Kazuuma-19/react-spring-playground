@@ -5,27 +5,27 @@
 #-------------------------------------------------------------------------------#
 version: "1.0"
 
-# Backend-specific Qodana configuration for Spring Boot + Java 21 + JOOQ
-linter: jetbrains/qodana-jvm-community:2025.2
+# Frontend-specific Qodana configuration for React + TypeScript + Vite
+linter: jetbrains/qodana-js:2025.2
 
 # Specify inspection profile for code analysis
 profile:
   name: qodana.starter
 
-# Project JDK version
-projectJDK: "21"
-
-# Exclude build artifacts and generated files
+# Exclude build artifacts and dependencies
 exclude:
   - name: "**"
     paths:
+      - "node_modules/**"
+      - "dist/**"
       - "build/**"
-      - ".gradle/**"
-      - "gradle/wrapper/**"
-      - "src/generated/**"
-      - "src/main/generated/**"
+      - ".vite/**"
+      - "coverage/**"
 
 # Include specific source directories for analysis
 include:
-  - "src/main/java/**"
-  - "src/test/java/**"
+  - "src/**"
+  - "*.ts"
+  - "*.tsx"
+  - "*.js"
+  - "*.jsx"

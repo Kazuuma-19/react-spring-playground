@@ -5,27 +5,25 @@
 #-------------------------------------------------------------------------------#
 version: "1.0"
 
-# Backend-specific Qodana configuration for Spring Boot + Java 21 + JOOQ
+# Monorepo configuration - analyze both backend and frontend
+# This root configuration helps coordinate analysis across the project
+
+# Primary linter for the overall project (backend Java focus)
 linter: jetbrains/qodana-jvm-community:2025.2
 
 # Specify inspection profile for code analysis
 profile:
   name: qodana.starter
 
-# Project JDK version
+# Global project JDK setting
 projectJDK: "21"
 
-# Exclude build artifacts and generated files
+# Global excludes for common build artifacts
 exclude:
   - name: "**"
     paths:
-      - "build/**"
-      - ".gradle/**"
-      - "gradle/wrapper/**"
-      - "src/generated/**"
-      - "src/main/generated/**"
-
-# Include specific source directories for analysis
-include:
-  - "src/main/java/**"
-  - "src/test/java/**"
+      - "**/build/**"
+      - "**/dist/**" 
+      - "**/node_modules/**"
+      - "**/.gradle/**"
+      - "**/.git/**"
