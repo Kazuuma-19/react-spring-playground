@@ -1,0 +1,10 @@
+{
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "lefthook"
+    ]
+  },
+  "devDependencies": {
+    "lefthook": "^1.13.0"
+  }
+}
