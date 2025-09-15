@@ -23,6 +23,7 @@
     "tailwindcss-react-aria-components": "^2.0.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.4",
     "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
