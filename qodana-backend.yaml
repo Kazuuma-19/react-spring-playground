@@ -14,18 +14,3 @@ profile:
 
 # Project JDK version
 projectJDK: "21"
-
-# Exclude build artifacts and generated files
-exclude:
-  - name: "**"
-    paths:
-      - "build/**"
-      - ".gradle/**"
-      - "gradle/wrapper/**"
-      - "src/generated/**"
-      - "src/main/generated/**"
-
-# Include specific source directories for analysis
-include:
-  - "src/main/java/**"
-  - "src/test/java/**"

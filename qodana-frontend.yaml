@@ -11,21 +11,3 @@ linter: jetbrains/qodana-js:2025.2
 # Specify inspection profile for code analysis
 profile:
   name: qodana.starter
-
-# Exclude build artifacts and dependencies
-exclude:
-  - name: "**"
-    paths:
-      - "node_modules/**"
-      - "dist/**"
-      - "build/**"
-      - ".vite/**"
-      - "coverage/**"
-
-# Include specific source directories for analysis
-include:
-  - "src/**"
-  - "*.ts"
-  - "*.tsx"
-  - "*.js"
-  - "*.jsx"
