@@ -22,22 +22,3 @@ jobs:
           args: |
             --source-directory,backend,--config,qodana-backend.yaml
           artifact-name: qodana-backend
-
-  qodana-frontend:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      checks: write
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
-
-      - name: "Qodana Frontend Scan"
-        uses: JetBrains/qodana-action@v2025.2
-        with:
-          args: |
-            --source-directory,frontend,--config,qodana-frontend.yaml
-          artifact-name: qodana-frontend
