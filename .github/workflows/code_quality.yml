@@ -20,5 +20,5 @@ jobs:
         uses: JetBrains/qodana-action@v2025.2
         with:
           args: |
-            --source-directory,backend,--config,qodana-backend.yaml
+            --source-directory,backend,--config,qodana-backend.yaml,--image,jetbrains/qodana-jvm-community:2025.2
           artifact-name: qodana-backend
