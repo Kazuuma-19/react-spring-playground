@@ -10,7 +10,7 @@ linter: jetbrains/qodana-jvm-community:2025.2
 
 # Specify inspection profile for code analysis
 profile:
-  name: qodana.starter
+  name: qodana.recommended
 
 # Project JDK version
 projectJDK: "21"
