@@ -7,11 +7,11 @@
   "linter": "QDJVMC",
   "attributes": {
     "deviceId": "200820300000000-86fe-ca35-26da-437cae2ff13a",
-    "jobUrl": "https://github.com/Kazuuma-19/react-spring-playground/actions/runs/17880383331",
+    "jobUrl": "https://github.com/Kazuuma-19/react-spring-playground/actions/runs/17880577500",
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/Kazuuma-19/react-spring-playground.git",
-        "revisionId": "5030fce06ea3882757e994d3e20e99a71d3dd558",
+        "revisionId": "9cbbf280be606ebcd403f11213c525bf2870e4b1",
         "branch": "feature/qodana"
       }
     },
