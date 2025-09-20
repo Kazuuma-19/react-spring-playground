@@ -22,7 +22,6 @@ jobs:
           results-dir: ./qodana-report
           args: |
             --source-directory,backend,
-            --linter,qodana-jvm-community
 
       - name: Upload Qodana report as artifact
         uses: actions/upload-artifact@v4
