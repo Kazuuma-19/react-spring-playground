@@ -49,7 +49,6 @@ jobs:
           ref: gh-pages
           path: gh-pages-content
           token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
 
       - name: Create PR directory and copy report
         run: |
