@@ -27,38 +27,62 @@ jobs:
           name: qodana-report-pr-${{ github.event.pull_request.number }}
           path: ./qodana-report/
 
-  # deploy-report:
-  #   runs-on: ubuntu-latest
-  #   needs: qodana-scan
-  #   permissions:
-  #     contents: write
-  #     pull-requests: write
-  #   steps:
-  #     - name: Download Qodana report
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: qodana-report-pr-${{ github.event.pull_request.number }}
-  #         path: ./downloaded-report
+  deploy-report:
+    runs-on: ubuntu-latest
+    needs: qodana-scan
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Download Qodana report
+        uses: actions/download-artifact@v4
+        with:
+          name: qodana-report-pr-${{ github.event.pull_request.number }}
+          path: ./downloaded-report
 
-  #     - name: Checkout gh-pages branch
-  #       uses: actions/checkout@v5
-  #       with:
-  #         ref: gh-pages
-  #         path: gh-pages-content
-  #         token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: gh-pages-content
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-  #     - name: Create PR directory and copy report
-  #       run: |
-  #         PR_NUMBER=${{ github.event.pull_request.number }}
-  #         cd gh-pages-content
-  #         mkdir -p "pr-${PR_NUMBER}"
-  #         cp -r ../downloaded-report/report/* "pr-${PR_NUMBER}/"
+      - name: Create PR directory and copy report
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          cd gh-pages-content
+          mkdir -p "pr-${PR_NUMBER}"
+          cp -r ../downloaded-report/report/* "pr-${PR_NUMBER}/"
 
-  #     - name: Commit and push to gh-pages
-  #       run: |
-  #         cd gh-pages-content
-  #         git config --local user.email "action@github.com"
-  #         git config --local user.name "GitHub Action"
-  #         git add .
-  #         git commit -m "Add Qodana report for PR #${{ github.event.pull_request.number }}"
-  #         git push origin gh-pages
+      - name: Commit and push to gh-pages
+        run: |
+          cd gh-pages-content
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Add Qodana report for PR #${{ github.event.pull_request.number }}"
+          git push origin gh-pages
+
+      - name: Comment PR with Qodana report link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const reportUrl = `https://${owner}.github.io/${repo}/pr-${prNumber}/`;
+            
+            const comment = `## 📊 Qodana Code Quality Report
+            
+            Your code quality report is ready! 🚀
+            
+            🔗 **[View Qodana Report](${reportUrl})**
+            
+            This report will be updated automatically with new commits.`;
+            
+            github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: owner,
+              repo: repo,
+              body: comment
+            });
