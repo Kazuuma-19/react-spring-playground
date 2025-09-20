@@ -24,10 +24,16 @@ jobs:
             --source-directory,backend,
             --linter,qodana-jvm-community
 
+      - name: Create PR-specific directory structure
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          mkdir -p pages-content/pr-${PR_NUMBER}
+          cp -r ./qodana-report/* pages-content/pr-${PR_NUMBER}/
+
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./qodana-report
+          path: ./pages-content
 
   deploy:
     needs: qodana-backend
