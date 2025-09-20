@@ -1,13 +1,19 @@
 diff --git a/.github/workflows/code_quality.yml b/.github/workflows/code_quality.yml
-index 5e44f63..7063d02 100644
+index 5e44f63..05dbf6b 100644
 --- a/.github/workflows/code_quality.yml
 +++ b/.github/workflows/code_quality.yml
+@@ -7 +7 @@ jobs:
+-  qodana-backend:
++  qodana-scan:
+@@ -10 +10 @@ jobs:
+-      contents: write
++      contents: read
 @@ -14 +14 @@ jobs:
 -      - uses: actions/checkout@v3
 +      - uses: actions/checkout@v5
 @@ -21,0 +22 @@ jobs:
 +          results-dir: ./qodana-report
-@@ -23,2 +24,45 @@ jobs:
+@@ -23,2 +24,51 @@ jobs:
 -            --source-directory,backend,--linter,qodana-jvm-community
 -          artifact-name: qodana-backend
 +            --source-directory,backend,
@@ -18,7 +24,19 @@ index 5e44f63..7063d02 100644
 +        with:
 +          name: qodana-report-pr-${{ github.event.pull_request.number }}
 +          path: ./qodana-report/
-+          retention-days: 30
++
++  deploy-report:
++    runs-on: ubuntu-latest
++    needs: qodana-scan
++    permissions:
++      contents: write
++      pull-requests: write
++    steps:
++      - name: Download Qodana report
++        uses: actions/download-artifact@v4
++        with:
++          name: qodana-report-pr-${{ github.event.pull_request.number }}
++          path: ./downloaded-report
 +
 +      - name: Checkout gh-pages branch
 +        uses: actions/checkout@v5
@@ -27,12 +45,6 @@ index 5e44f63..7063d02 100644
 +          path: gh-pages-content
 +          token: ${{ secrets.GITHUB_TOKEN }}
 +        continue-on-error: true
-+
-+      - name: Download Qodana report
-+        uses: actions/download-artifact@v4
-+        with:
-+          name: qodana-report-pr-${{ github.event.pull_request.number }}
-+          path: ./downloaded-report
 +
 +      - name: Create PR directory and copy report
 +        run: |

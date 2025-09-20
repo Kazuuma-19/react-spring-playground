@@ -4,6 +4,14 @@
       "path": "/data/project/.github/workflows/code_quality.yml",
       "added": [
         {
+          "firstLine": 7,
+          "count": 1
+        },
+        {
+          "firstLine": 10,
+          "count": 1
+        },
+        {
           "firstLine": 14,
           "count": 1
         },
@@ -13,10 +21,18 @@
         },
         {
           "firstLine": 24,
-          "count": 45
+          "count": 51
         }
       ],
       "deleted": [
+        {
+          "firstLine": 7,
+          "count": 1
+        },
+        {
+          "firstLine": 10,
+          "count": 1
+        },
         {
           "firstLine": 14,
           "count": 1

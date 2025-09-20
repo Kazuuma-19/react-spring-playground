@@ -1,18 +1,18 @@
-time="2025-09-20T05:30:35Z" level=info msg="Executing command: [git show --no-patch 86ffec36eab033c9af620bb89110d53b58700e11]"
-time="2025-09-20T05:30:35Z" level=info msg="commit 86ffec36eab033c9af620bb89110d53b58700e11\nMerge: 6b41445 c2cb643\nAuthor: Kazuma Saito <96773919+Kazuuma-19@users.noreply.github.com>\nDate:   Wed Sep 17 21:22:37 2025 +0900\n\n    Merge pull request #7 from Kazuuma-19/feature/move-claude-md-to-root\n    \n    feat: move CLAUDE.md to project root and update for full-stack project\n"
-time="2025-09-20T05:30:35Z" level=info msg="Executing command: [git rev-parse HEAD]"
-time="2025-09-20T05:30:35Z" level=info msg="64f0a4d7c45a5a7e645a9173b9a373ead5068099\n"
-time="2025-09-20T05:30:35Z" level=info msg="Executing command: [git rev-parse --show-toplevel]"
-time="2025-09-20T05:30:35Z" level=info msg="/data/project\n"
-time="2025-09-20T05:30:35Z" level=info msg="Executing command: [git diff 86ffec36eab033c9af620bb89110d53b58700e11 64f0a4d7c45a5a7e645a9173b9a373ead5068099 --unified=0 --no-renames > /data/results/log/git-diff.log]"
-time="2025-09-20T05:30:35Z" level=info
-time="2025-09-20T05:30:35Z" level=info msg="Executing command: [git checkout -f 86ffec36eab033c9af620bb89110d53b58700e11]"
-time="2025-09-20T05:30:35Z" level=info
-time="2025-09-20T05:30:35Z" level=error msg="Previous HEAD position was 64f0a4d fix: use artifacts to preserve Qodana report during gh-pages deployment\nHEAD is now at 86ffec3 Merge pull request #7 from Kazuuma-19/feature/move-claude-md-to-root\n\n"
-time="2025-09-20T05:30:35Z" level=info msg="Executing command: [git submodule update --init --recursive --force]"
-time="2025-09-20T05:30:35Z" level=info
-time="2025-09-20T05:30:58Z" level=info msg="Executing command: [git checkout -f 64f0a4d7c45a5a7e645a9173b9a373ead5068099]"
-time="2025-09-20T05:30:58Z" level=info
-time="2025-09-20T05:30:58Z" level=error msg="Previous HEAD position was 86ffec3 Merge pull request #7 from Kazuuma-19/feature/move-claude-md-to-root\nHEAD is now at 64f0a4d fix: use artifacts to preserve Qodana report during gh-pages deployment\n\n"
-time="2025-09-20T05:30:58Z" level=info msg="Executing command: [git submodule update --init --recursive --force]"
-time="2025-09-20T05:30:58Z" level=info
+time="2025-09-20T05:53:36Z" level=info msg="Executing command: [git show --no-patch 86ffec36eab033c9af620bb89110d53b58700e11]"
+time="2025-09-20T05:53:36Z" level=info msg="commit 86ffec36eab033c9af620bb89110d53b58700e11\nMerge: 6b41445 c2cb643\nAuthor: Kazuma Saito <96773919+Kazuuma-19@users.noreply.github.com>\nDate:   Wed Sep 17 21:22:37 2025 +0900\n\n    Merge pull request #7 from Kazuuma-19/feature/move-claude-md-to-root\n    \n    feat: move CLAUDE.md to project root and update for full-stack project\n"
+time="2025-09-20T05:53:36Z" level=info msg="Executing command: [git rev-parse HEAD]"
+time="2025-09-20T05:53:36Z" level=info msg="a7269e2856e1ed352b1b4fc94e611505149aaee5\n"
+time="2025-09-20T05:53:36Z" level=info msg="Executing command: [git rev-parse --show-toplevel]"
+time="2025-09-20T05:53:36Z" level=info msg="/data/project\n"
+time="2025-09-20T05:53:36Z" level=info msg="Executing command: [git diff 86ffec36eab033c9af620bb89110d53b58700e11 a7269e2856e1ed352b1b4fc94e611505149aaee5 --unified=0 --no-renames > /data/results/log/git-diff.log]"
+time="2025-09-20T05:53:36Z" level=info
+time="2025-09-20T05:53:36Z" level=info msg="Executing command: [git checkout -f 86ffec36eab033c9af620bb89110d53b58700e11]"
+time="2025-09-20T05:53:36Z" level=info
+time="2025-09-20T05:53:36Z" level=error msg="Previous HEAD position was a7269e2 refactor: split Qodana workflow into separate scan and deploy jobs\nHEAD is now at 86ffec3 Merge pull request #7 from Kazuuma-19/feature/move-claude-md-to-root\n\n"
+time="2025-09-20T05:53:36Z" level=info msg="Executing command: [git submodule update --init --recursive --force]"
+time="2025-09-20T05:53:36Z" level=info
+time="2025-09-20T05:54:05Z" level=info msg="Executing command: [git checkout -f a7269e2856e1ed352b1b4fc94e611505149aaee5]"
+time="2025-09-20T05:54:05Z" level=info
+time="2025-09-20T05:54:05Z" level=error msg="Previous HEAD position was 86ffec3 Merge pull request #7 from Kazuuma-19/feature/move-claude-md-to-root\nHEAD is now at a7269e2 refactor: split Qodana workflow into separate scan and deploy jobs\n\n"
+time="2025-09-20T05:54:05Z" level=info msg="Executing command: [git submodule update --init --recursive --force]"
+time="2025-09-20T05:54:05Z" level=info

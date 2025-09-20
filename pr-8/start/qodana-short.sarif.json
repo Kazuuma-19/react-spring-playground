@@ -21,7 +21,7 @@
       },
       "invocations": [
         {
-          "startTimeUtc": "2025-09-20T05:30:42.095087192Z",
+          "startTimeUtc": "2025-09-20T05:53:46.896227226Z",
           "exitCode": 0,
           "executionSuccessful": true
         }
@@ -30,7 +30,7 @@
       "versionControlProvenance": [
         {
           "repositoryUri": "https://github.com/Kazuuma-19/react-spring-playground.git",
-          "revisionId": "64f0a4d7c45a5a7e645a9173b9a373ead5068099",
+          "revisionId": "a7269e2856e1ed352b1b4fc94e611505149aaee5",
           "branch": "feature/qodana",
           "properties": {
             "repoUrl": "https://github.com/Kazuuma-19/react-spring-playground.git",
@@ -43,9 +43,9 @@
       "results": [],
       "automationDetails": {
         "id": "project/qodana/2025-09-20",
-        "guid": "1612d1e5-eb10-43ab-8ea3-bd6a47470bbd",
+        "guid": "f07525b5-618e-4851-8064-38ee8b75e089",
         "properties": {
-          "jobUrl": "https://github.com/Kazuuma-19/react-spring-playground/actions/runs/17875780438",
+          "jobUrl": "https://github.com/Kazuuma-19/react-spring-playground/actions/runs/17876104766",
           "analysisKind": "incremental"
         }
       },
