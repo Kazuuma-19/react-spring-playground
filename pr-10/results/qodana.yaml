@@ -1,0 +1,15 @@
+#-------------------------------------------------------------------------------#
+#               Qodana analysis is configured by qodana.yaml file               #
+#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
+#-------------------------------------------------------------------------------#
+version: '1.0'
+
+# Backend-specific Qodana configuration for Spring Boot + Java 21 + JOOQ
+linter: 'jetbrains/qodana-jvm-community:2025.2'
+
+# Specify inspection profile for code analysis
+profile:
+  name: qodana.recommended
+
+# Project JDK version
+projectJDK: '21'
