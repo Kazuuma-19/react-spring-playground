@@ -1,11 +1,12 @@
 name: Qodana
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, closed]
 
 jobs:
   qodana-scan:
     runs-on: ubuntu-latest
+    if: github.event.action != 'closed'
     permissions:
       contents: write
       pull-requests: write
@@ -30,6 +31,7 @@ jobs:
   deploy-report:
     runs-on: ubuntu-latest
     needs: qodana-scan
+    if: github.event.action != 'closed'
     permissions:
       contents: write
       pull-requests: write
@@ -86,3 +88,25 @@ jobs:
               repo: repo,
               body: comment
             });
+
+  cleanup-merged-pr:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove PR directory
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          rm -rf "pr-${PR_NUMBER}"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Remove Qodana report for merged PR #${PR_NUMBER}"
+          git push origin gh-pages
