@@ -24,22 +24,37 @@ jobs:
             --source-directory,backend,
             --linter,qodana-jvm-community
 
+      - name: Upload Qodana report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qodana-report-pr-${{ github.event.pull_request.number }}
+          path: ./qodana-report/
+          retention-days: 30
+
       - name: Checkout gh-pages branch
         uses: actions/checkout@v5
         with:
           ref: gh-pages
-          path: .
+          path: gh-pages-content
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
+
+      - name: Download Qodana report
+        uses: actions/download-artifact@v4
+        with:
+          name: qodana-report-pr-${{ github.event.pull_request.number }}
+          path: ./downloaded-report
 
       - name: Create PR directory and copy report
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
+          cd gh-pages-content
           mkdir -p "pr-${PR_NUMBER}"
-          cp -r ./qodana-report/* "pr-${PR_NUMBER}/"
+          cp -r ../downloaded-report/* "pr-${PR_NUMBER}/"
 
       - name: Commit and push to gh-pages
         run: |
+          cd gh-pages-content
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
