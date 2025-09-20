@@ -56,7 +56,7 @@ jobs:
           PR_NUMBER=${{ github.event.pull_request.number }}
           cd gh-pages-content
           mkdir -p "pr-${PR_NUMBER}"
-          cp -r ../downloaded-report/* "pr-${PR_NUMBER}/"
+          cp -r ../downloaded-report/report/* "pr-${PR_NUMBER}/"
 
       - name: Commit and push to gh-pages
         run: |
