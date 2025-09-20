@@ -64,11 +64,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-          
           git commit -m "Add Qodana report for PR #${{ github.event.pull_request.number }}"
           git push origin gh-pages
