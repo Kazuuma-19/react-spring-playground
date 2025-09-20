@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/schemastore/schemastore/master/src/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDJVMC",
+          "fullName": "Qodana Community for JVM",
+          "version": "252.25436",
+          "rules": [],
+          "taxa": [],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": []
+      },
+      "invocations": [
+        {
+          "startTimeUtc": "2025-09-20T05:31:01.341498605Z",
+          "exitCode": 0,
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "versionControlProvenance": [
+        {
+          "repositoryUri": "https://github.com/Kazuuma-19/react-spring-playground.git",
+          "revisionId": "64f0a4d7c45a5a7e645a9173b9a373ead5068099",
+          "branch": "feature/qodana",
+          "properties": {
+            "repoUrl": "https://github.com/Kazuuma-19/react-spring-playground.git",
+            "lastAuthorName": "Kazuma",
+            "vcsType": "Git",
+            "lastAuthorEmail": "kazu15870@gmail.com"
+          }
+        }
+      ],
+      "results": [],
+      "automationDetails": {
+        "id": "project/qodana/2025-09-20",
+        "guid": "1612d1e5-eb10-43ab-8ea3-bd6a47470bbd",
+        "properties": {
+          "jobUrl": "https://github.com/Kazuuma-19/react-spring-playground/actions/runs/17875780438",
+          "analysisKind": "incremental"
+        }
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "qodana.coverage.files.provided": false,
+        "configProfile": "recommended",
+        "deviceId": "200820300000000-86fe-ca35-26da-437cae2ff13a",
+        "qodanaNewResultSummary": {
+          "total": 0
+        }
+      }
+    }
+  ]
+}

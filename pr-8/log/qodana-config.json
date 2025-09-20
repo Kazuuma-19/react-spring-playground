@@ -1,0 +1,6 @@
+{
+  "local": {
+    "filename": "qodana.yaml",
+    "content": "---\n#-------------------------------------------------------------------------------#\n#               Qodana analysis is configured by qodana.yaml file               #\n#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #\n#-------------------------------------------------------------------------------#\nversion: \"1.0\"\n\n# Backend-specific Qodana configuration for Spring Boot + Java 21 + JOOQ\nlinter: jetbrains/qodana-jvm-community:2025.2\n\n# Specify inspection profile for code analysis\nprofile:\n  name: qodana.recommended\n\n# Project JDK version\nprojectJDK: \"21\"\n"
+  }
+}

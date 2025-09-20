@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "path": "/data/project/.github/workflows/code_quality.yml",
+      "added": [
+        {
+          "firstLine": 14,
+          "count": 1
+        },
+        {
+          "firstLine": 22,
+          "count": 1
+        },
+        {
+          "firstLine": 24,
+          "count": 45
+        }
+      ],
+      "deleted": [
+        {
+          "firstLine": 14,
+          "count": 1
+        },
+        {
+          "firstLine": 23,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "/data/project/backend/src/main/java/com/example/backend/QodanaTest.java",
+      "added": [
+        {
+          "firstLine": 1,
+          "count": 8
+        }
+      ],
+      "deleted": []
+    },
+    {
+      "path": "/data/project/qodana.yaml",
+      "added": [
+        {
+          "firstLine": 13,
+          "count": 1
+        }
+      ],
+      "deleted": [
+        {
+          "firstLine": 13,
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
