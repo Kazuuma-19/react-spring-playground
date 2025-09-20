@@ -20,6 +20,7 @@ jobs:
         uses: JetBrains/qodana-action@v2025.2
         with:
           results-dir: ./qodana-report
+          use-caches: false # 後ではずす
           args: |
             --source-directory,backend
 
