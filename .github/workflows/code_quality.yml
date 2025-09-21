@@ -7,10 +7,16 @@ jobs:
   qodana-scan:
     runs-on: ubuntu-latest
     if: github.event.action != 'closed'
+
     permissions:
       contents: write
       pull-requests: write
       checks: write
+
+    defaults:
+      run:
+        working-directory: backend
+
     steps:
       - uses: actions/checkout@v5
         with:
@@ -23,7 +29,6 @@ jobs:
           results-dir: ./qodana-report
           args: |
             --linter,jetbrains/qodana-jvm-community,
-            -d,backend
 
       - name: Upload Qodana report as artifact
         uses: actions/upload-artifact@v4
